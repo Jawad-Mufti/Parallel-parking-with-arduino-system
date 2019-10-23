@@ -1,0 +1,50 @@
+// on following ideas were working: nadja, majed, martin
+// idea 1:
+// what: change the driving backward method by setting an angle
+// result: drives backward straight for ca. 1 meter, sometimes.
+// issue: need to find exact setAngle-parameter next time when having the car
+
+void driveBackward(){
+  car.setSpeed(backwardSpeed);
+  car.setAngle(15);
+}
+
+
+
+// idea 2:
+// change initially martin's method in 1 aspect
+// what: formula to calculate setAngle-parameter (offset should be signed not unsigned here)
+// result: not known
+// issue: needs testing
+
+void straightenCar() {
+  gyro.update();
+  int offset = gyro.calibrate();
+  int turn = gyro.getAngularDisplacement();
+  Serial.println("car deviated " + turn);
+  if(turn != offset) {
+    car.setAngle(- (turn - offset));
+  }
+}
+
+/*
+this a method that makes the car dirve straight forward by taking the getAngularDisplacement form
+the Gyro and then setting the appropriate motor speed on both sides of the car.
+the car deviated to left when the displacement between 0 and 180 thus we increase the speed on the left
+motor and decrease on the right motor and vice versa!
+*/
+void straightenCar() {
+  gyro.update();
+  int turn = gyro.getAngularDisplacement();
+  Serial3.println("car deviated " + turn);
+  if(turn > 2 && turn < 180){
+    car.setMotorSpeed(fSpeed,fSpeed/1.5);
+
+  }
+    else if (turn > 180 && turn < 358) {
+      car.setMotorSpeed(fSpeed/1.5,fSpeed);
+    }
+    else
+    car.setMotorSpeed(fSpeed,fSpeed);
+  }
+
