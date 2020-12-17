@@ -23,9 +23,9 @@ const int encoderRightPin = 3;
 int frontDistanceInCm;
 int backDistanceInCm;
 int irDistanceInCm;                      
-int maxFrontDistance = 25;               
-int maxBackDistance = 25;
-int maxSideDistance = 20;
+int maxFrontDistance = 26;               
+int maxBackDistance = 26;
+int maxSideDistance = 21;
 int odometerLeftDistance, odometerRightDistance;
 
 int spotSize;
