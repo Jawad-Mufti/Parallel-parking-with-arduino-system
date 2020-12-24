@@ -5,6 +5,8 @@
 -Arduino uno board attached to a mini car.
 - breadboard + connectors
 -Ultra-sonic sensors attached to certain pins.
-please update pin numbers to the relevant pins in your car.
+
+- please update (initialize) pin numbers to the relevant pins on your arduino board.pins.
+
 
 
