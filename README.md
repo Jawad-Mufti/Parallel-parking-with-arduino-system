@@ -6,7 +6,7 @@
 - breadboard + connectors
 -Ultra-sonic sensors attached to certain pins.
 
-- please update (initialize) pin numbers to the relevant pins on your arduino board.pins.
+- please update (initialize) pin numbers to the relevant pins on your arduino board.
 
 
 
